@@ -1,5 +1,3 @@
-# graph-lib
-# graph-lib
 Some design notes:
 1. The library currently supports non-weighted directed and undirected graphs with common interfaces. 
 Weighted graphs can be added by extending 'Edge' class and implementing new graph class which uses extended class as the generic type for edges.
