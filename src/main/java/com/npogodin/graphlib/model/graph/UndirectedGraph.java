@@ -4,9 +4,14 @@ import com.npogodin.graphlib.model.Edge;
 import com.npogodin.graphlib.model.exception.VertexDoesNotExistException;
 import com.npogodin.graphlib.model.graph.interfaces.NonWeightedGraph;
 
+/**
+ * Non-weighted undirected graph implementation
+ * @param <V> Vertex type
+ */
 public class UndirectedGraph<V>
         extends AbstractBaseGraph<V, Edge<V>>
         implements NonWeightedGraph<V, Edge<V>> {
+
     public void addEdge(V from, V to) throws VertexDoesNotExistException {
         addEdge(new Edge<>(from, to));
     }

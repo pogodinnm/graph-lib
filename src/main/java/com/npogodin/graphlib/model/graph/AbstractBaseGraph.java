@@ -13,8 +13,14 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
+/**
+ * Contains basic methods for graphs.
+ * Adding edges functionality is implemented in inherited classes as it depends on graph type
+ * @param <V>
+ * @param <E>
+ */
 public abstract class AbstractBaseGraph<V, E extends Edge<V>> implements LockableGraph<V, E> {
-    private final Set<V> vertices = new HashSet<>();
+    final Set<V> vertices = new HashSet<>();
     final Map<V, List<E>> edgeMap = new HashMap<>();
 
     protected ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
