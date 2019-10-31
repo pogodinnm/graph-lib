@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'npogodin-interview'
-version '1.0-SNAPSHOT'
+version '1.0'
 
 sourceCompatibility = 1.8
 
@@ -11,6 +11,23 @@ repositories {
     mavenCentral()
 }
 
+jar {
+    baseName = 'GraphLib'
+    version = "1.0"
+}
+
+
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile "org.junit.jupiter:junit-jupiter-api:5.4.0"
+    testRuntime "org.junit.jupiter:junit-jupiter-engine:5.4.0"
+}
+
+tasks.withType(Test) {
+    doFirst {
+        testLogging {
+            // Show that tests are run in the command-line output
+            events 'started', 'passed'
+        }
+        useJUnitPlatform()
+    }
 }
